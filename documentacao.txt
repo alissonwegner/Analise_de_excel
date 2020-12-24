@@ -1,0 +1,7 @@
+#k -> raiz do valor de linhas (numero de intervalos de classes)
+#h amplitude da classe
+#min -> menor valor
+#max -> maior valor
+#amplitude-> amplitude total
+#dados coleta a tabela especifica
+#banco -> todo o banco para ser trabalhado
