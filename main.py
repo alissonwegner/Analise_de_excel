@@ -1,16 +1,19 @@
 from numpy.core.fromnumeric import std
 import pandas as pd
 import math
+import statistics
+import numpy as np
+
 
 # pd.set_option('display.max_rowns', 1000)#limitando linha e coluna
 #pd.set_option('display.max_', 1000)
 
 banco = pd.read_excel("bb.xls")
 banco.head()
-print(banco)
+#print(banco)
 
 dados = banco[['Café']].describe()
-print(dados)
+#print(dados)
 
 cont = dados.describe().loc[['count']]#conta valor de linhas
 mean = dados.describe().loc[['mean']]#media
@@ -23,7 +26,8 @@ q3 = dados.describe().loc[['75%']]#quatil3
 mediana = dados[['Café']].median()#mediana
 print("mediana   ", mediana)
 amplitude = max - min
-# ncolunas=banco.shape
 ncolunas = len(banco.index)  # numero de linhas
 k = math.sqrt(ncolunas)
 h = amplitude / k
+print(banco['Café'].mode())
+
