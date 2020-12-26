@@ -25,8 +25,5 @@ print("mediana   ", mediana)
 amplitude = max - min
 # ncolunas=banco.shape
 ncolunas = len(banco.index)  # numero de linhas
-
 k = math.sqrt(ncolunas)
 h = amplitude / k
-dados.agg({'Age': ['min', 'max', 'median', 'skew'],
-         'Fare': ['min', 'max', 'median', 'mean']})
