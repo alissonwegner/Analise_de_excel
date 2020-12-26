@@ -11,17 +11,22 @@ print(banco)
 
 dados = banco[['Café']].describe()
 print(dados)
-min = banco[['Café']].min()
-min = float(min)
-print("valor min do cafe: ", min)
-max = banco[['Café']].max()
-max = float(max)
-print("valor min do cafe: ", max)
+
+cont = dados.describe().loc[['count']]#conta valor de linhas
+mean = dados.describe().loc[['mean']]#media
+std_ = dados.describe().loc[['std']]#Desvio padrão
+min = dados.describe().loc[['min']]#minimo
+max = dados.describe().loc[['max']]#maximo
+q1 = dados.describe().loc[['25%']]#quatil1
+q2 = dados.describe().loc[['50%']]#quatil2
+q3 = dados.describe().loc[['75%']]#quatil3
+mediana = dados[['Café']].median()#mediana
+print("mediana   ", mediana)
 amplitude = max - min
 # ncolunas=banco.shape
 ncolunas = len(banco.index)  # numero de linhas
 
 k = math.sqrt(ncolunas)
 h = amplitude / k
-teste = dados.describe().loc[['count','max']]
-print(teste)
+dados.agg({'Age': ['min', 'max', 'median', 'skew'],
+         'Fare': ['min', 'max', 'median', 'mean']})
