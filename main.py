@@ -37,14 +37,16 @@ aux=1
 k = float(k)
 h = float(h)
 print("h", h)
-
+temp = min
 
 while aux<k:
    print(min)
-   clas_tab = min
+   clas_tab[aux] = n_classes(min, h)
    min = min + h
    aux=aux+1 
-aux=0
-while clas_tab:
-   if(dados.loc[dados.loc['Café']==min or dados.loc['Café']< min +h]):
-        
+aux=1
+
+while aux<k:
+   if(dados.loc[dados.loc['Café']==n_classes.min or dados.loc['Café']< n_classes.max]):
+       cont+1
+    clas_tab[aux] = n_classes.fre_abs(cont)
