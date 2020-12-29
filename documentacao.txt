@@ -5,3 +5,4 @@
 #amplitude-> amplitude total
 #dados coleta a tabela especifica
 #banco -> todo o banco para ser trabalhado
+O módulo statistics calcula as propriedades estatísticas básicas (a média, a mediana, a variação, etc.) de dados numéricos:

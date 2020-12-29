@@ -14,20 +14,37 @@ banco.head()
 
 dados = banco[['Café']].describe()
 #print(dados)
-
-cont = dados.describe().loc[['count']]#conta valor de linhas
-mean = dados.describe().loc[['mean']]#media
-std_ = dados.describe().loc[['std']]#Desvio padrão
-min = dados.describe().loc[['min']]#minimo
-max = dados.describe().loc[['max']]#maximo
-q1 = dados.describe().loc[['25%']]#quatil1
-q2 = dados.describe().loc[['50%']]#quatil2
-q3 = dados.describe().loc[['75%']]#quatil3
-mediana = dados[['Café']].median()#mediana
-print("mediana   ", mediana)
+min = banco[['Café']].min()
+min = float(min)
+max = banco[['Café']].max()
+max = float(max)
 amplitude = max - min
 ncolunas = len(banco.index)  # numero de linhas
-k = math.sqrt(ncolunas)
-h = amplitude / k
-print(banco['Café'].mode())
+k = ncolunas
 
+k=1+3.33*math.log10(340)
+k = ("%.0f" % round(k +0.9))
+k = int(k)
+
+
+h = amplitude / k
+k = ("%.0f" % round(k +0.9))
+h = ("%.2f" % (h+0.04))
+
+#print(banco['Café'].mode())
+#classes
+aux=1
+k = float(k)
+h = float(h)
+print("h", h)
+
+
+while aux<k:
+   print(min)
+   clas_tab = min
+   min = min + h
+   aux=aux+1 
+aux=0
+while clas_tab:
+   if(dados.loc[dados.loc['Café']==min or dados.loc['Café']< min +h]):
+        
